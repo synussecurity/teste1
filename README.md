@@ -28,7 +28,7 @@ Este ambiente contém:
 * **Ferramentas Adicionais:** Composer e xdebug
 
 São pré-requisitos para rodar o ambiente, os seguintes sistemas (devem ser instalados na máquina local, 
-em sua ultima versão):
+em sua última versão):
 
 * [Git](https://git-scm.com/downloads)
 * [Oracle Virtual Box](https://www.virtualbox.org/wiki/Downloads) 
@@ -36,7 +36,7 @@ em sua ultima versão):
 * [Ansible](http://docs.ansible.com/ansible/intro_installation.html) (Apenas para Linux ou Mac, para Windows não é 
 necessário)
 
-Uma vez instalados todos os requisitos, deve-se então criar um *branch* com o seu nome_sobrenome, e 
+Uma vez instalados todos os requisitos, deve-se então criar um *branch* com o seu nome_sobrenome e 
 clonar o repositório para sua máquina local.
 
 ****Atenção!!! Você deve criar um _branch_ com o seu nome antes de clonar o projeto!**** 
@@ -79,7 +79,7 @@ equipe de desenvolvimento da Synus. Apenas algumas regras são alteradas depende
 O teste consiste na criação de um microblog corporativo, extremamente simples, semelhante ao 
 [Twitter](https://twitter.com/).
 
-Todas as funcionalidades do sistema, devem ser apresentadas como aplicação web, e como uma API rest, para
+Todas as funcionalidades do sistema, devem ser apresentadas como aplicação web e como uma API rest, para
 ser acessada por outras aplicações (como por exemplo aplicativos mobile).
 
 Na aplicação web, os usuários são autenticados por nome de usuário e senha, na API deverão ser identificados
@@ -87,7 +87,7 @@ por um token, gerado e validado pela API.
 
 Não é necessário se preocupar com limites de acesso na API (isso não se faz em produção, mas isso é um teste).
 
-Toda a modelagem e arquitetura do sistema fica a critério do desenvolvedor, as únicas exigências, são usar 
+Toda a modelagem e arquitetura do sistema fica a critério do desenvolvedor, a única exigência, é usar 
 PHP sobre um design MVC (ou similar).
 
 Pode-se usar uma abordagem relacional, *schemaless*, ou ainda um *mix* de ambas para a persistência dos 
@@ -118,7 +118,7 @@ os posts que contém essa hashtag.
 
 ### Regras
 
-* Posts devem conter um número limitado de caracteres, e esse valor deve ser definido como um parâmetro 
+* Posts devem conter um número limitado de caracteres e esse valor deve ser definido como um parâmetro 
 global.
 * Posts podem conter markups básicos:
     * **Negrito**: Qualquer sequencia de caracteres entre asteriscos (`\*texto em negrito\*`);
@@ -128,7 +128,7 @@ global.
     pontos ( `[Texto do link:http://enderecodolink.com]`  );
     * Hashtags: Qualquer sequencia de letras e números (sem espaços) precedida por um sustenido (#textodahashtag);
     * Usuários: Um nome de usuário precedido por um arrouba (@nomedousuario);
-* As hashtags devem ser *case insensitive*, e ser formadas apenas por letras e números. 
+* As hashtags devem ser *case insensitive* e ser formadas apenas por letras e números. 
 * As hashtags devem ser exibidas como links.
 * Os nomes de usuário devem ser exibidas como links.
 * Usuários anônimos só podem acessar a página de registro e login.
@@ -147,7 +147,7 @@ de conhecimento necessário para integrar o time da Synus. Continue evoluindo, s
 * Só solicite o *pull request* de finalização se o seu projeto cumpre os requisitos.
 * O arquivo src/README.md, deve ser preenchido com as instruções de setup do seu projeto.
 * Utilize instruções simples, preferencialmente um script único que faça todo o setup.
-* Inclua as o procedimento para acesso, tanto da aplicação web, quanto da API.
+* Inclua o procedimento para acesso, tanto da aplicação web, quanto da API.
 * Seu código deve rodar! Nós não vamos perder tempo corrigindo problemas de setup, então garanta
 que seu ambiente está rodando antes de realizar o pull request.
 * É importante que o projeto tenha dados para teste (por meio de um seeder), para que seja fácil não só subir, 
@@ -164,11 +164,11 @@ de negócio do sistema possa entender o que você está fazendo.
 
 Nível **Junior**:
 
-* Utilizar algum framework MCV para o projeto. Pode ser qualquer um a sua escolha (Zend, Laravel, Symphony, 
+* Utilizar algum framework MVC para o projeto. Pode ser qualquer um a sua escolha (Zend, Laravel, Symphony, 
 Yii, Phalcon, Code Igniter). O que queremos avaliar é a sua capacidade de entender e interagir com uma 
 arquitetura MVC.
 * Será avaliada a utilização do *composer* e do *git* também. 
-* Cumpra os requisitos do projeto, e você tem enormes chances de ser aprovado.
+* Cumpra os requisitos do projeto e você tem enormes chances de ser aprovado.
 
 
 Nível **Pleno**:
