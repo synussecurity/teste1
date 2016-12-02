@@ -39,6 +39,8 @@ necessário)
 Uma vez instalados todos os requisitos, deve-se então criar um *branch* com o seu nome_sobrenome, e 
 clonar o repositório para sua máquina local.
 
+****Atenção!!! Você deve criar um _branch_ com o seu nome antes de clonar o projeto!**** 
+
 Dentro da raiz do projeto clonado, deve-se então rodar, via linha de comando, o seguinte comando:
 
     vagrant up
