@@ -1,0 +1,30 @@
+---
+server:
+    install: '1'
+    timezone: UTC
+    locale: pt_BR.UTF-8
+    selinux: permissive
+vagrant_local:
+    install: '1'
+    vm: { base_box: centos/6, hostname: default, ip: 192.168.33.99, memory: '512', sharedfolder: ./, useVagrantCloud: '1', syncType: nfs }
+nginx:
+    install: '1'
+    docroot: /vagrant
+    servername: myApp.vb
+mariadb:
+    install: '1'
+    root_password: '123'
+    user: user
+    password: password
+    database: synus
+mongodb:
+    install: '1'
+php:
+    install: '1'
+    ppa: php5-5.6
+    packages: [php70w-cli, php70w-intl, php70w-mcrypt, php70w-mysql, php70w-mbstring, php70w-pecl-mongodb]
+xdebug:
+    install: '1'
+composer:
+    install: '1'
+

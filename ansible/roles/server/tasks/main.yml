@@ -1,0 +1,38 @@
+---
+
+- name: Install System Packages
+  become: true
+  become_method: sudo
+  yum: pkg={{ item }} state=latest
+  with_items:
+    - curl
+    - wget
+    - libselinux-python
+
+- name: Install Extra Packages
+  become: true
+  become_method: sudo
+  when: server.packages is defined
+  yum: pkg={{ item }} state=latest
+  with_items: server.packages
+
+- name: Configure the timezone
+  become: true
+  become_method: sudo
+  template: src=timezone.tpl dest=/etc/timezone
+
+- name: More Configure the timezone
+  become: true
+  become_method: sudo
+  file: src=/usr/share/zoneinfo/{{server.timezone}} dest=/etc/localtime state=link force=yes backup=yes
+
+- name: Change SELinux configuration
+  become: true
+  become_method: sudo
+  template: src=selinux.tpl dest=/etc/selinux/config
+
+- name: Change SELinux mode
+  become: true
+  become_method: sudo
+  shell: setenforce {{server.selinux}}
+

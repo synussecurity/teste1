@@ -1,0 +1,38 @@
+---
+
+- name: Install EPEL
+  become: true
+  become_method: sudo
+  yum: pkg=epel-release state=latest
+
+- name: Add the Webtatic EL yum repository information
+  become: true
+  become_method: sudo
+  shell: rpm -Uvh --replacepkgs https://mirror.webtatic.com/yum/el6/latest.rpm
+  #template: src=webtatic.repo.tpl dest=/etc/yum.repos.d/webtatic.repo
+
+- name: Install php7
+  become: true
+  become_method: sudo
+  yum: pkg=php70w state=latest
+
+- name: Install php7 opcache
+  become: true
+  become_method: sudo
+  yum: pkg=php70w-opcache state=latest
+
+- name: Install php7-fpm
+  become: true
+  become_method: sudo
+  yum: pkg=php70w-fpm state=latest
+
+- name: Install PHP Packages
+  become: true
+  become_method: sudo
+  yum: pkg={{ item }} state=latest
+  with_items: php.packages
+  when: php.packages is defined
+
+- name: Start php-fpm
+  service: name=php-fpm enabled=yes state=restarted
+

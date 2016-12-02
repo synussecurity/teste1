@@ -1,0 +1,20 @@
+---
+
+- name: Add MongoDB repository
+  become: true
+  become_method: sudo
+  template: src=mongodb.repo.tpl dest=/etc/yum.repos.d/mongodb.repo
+
+- name: Install MongoDB
+  yum: pkg=mongodb-org state=present update_cache=yes
+
+- name: Create default configuration template
+  template:
+    src=mongodb.conf.tpl
+    dest=/etc/mongodb.conf
+    owner=root group=root mode=0644
+  notify:
+    - mongodb-restart
+
+- name: Insure deamon is running correctly
+  service: name=mongod state=started

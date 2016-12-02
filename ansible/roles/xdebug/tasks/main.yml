@@ -1,0 +1,5 @@
+---
+- name: Install xDebug
+  become: true
+  become_method: sudo
+  yum: pkg=php70w-pecl-xdebug state=latest

@@ -1,0 +1,16 @@
+---
+- name: Install EPEL
+  become: true
+  become_method: sudo
+  yum: pkg=epel-release state=latest
+
+- name: Install Nginx
+  become: true
+  become_method: sudo
+  yum: pkg=nginx state=latest
+
+- name: Change default nginx site
+  become: true
+  become_method: sudo
+  template: src=default.tpl dest=/etc/nginx/conf.d/default.conf
+  notify: restart nginx
