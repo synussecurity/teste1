@@ -45,7 +45,7 @@ Dentro da raiz do projeto clonado, deve-se então rodar, via linha de comando, o
 
     vagrant up
     
-Esse comando pode levar um bom tento para executar a primeira vez, dependendo da sua conexão com a internet, 
+Esse comando pode levar um bom tempo para executar a primeira vez, dependendo da sua conexão com a internet, 
 pois ele vai baixar o box do CentOS e instalar todo o ambiente.
 
 A partir daí pode-se acessar o endereço http://192.168.33.99 para ter acesso ao projeto rodando.
