@@ -30,7 +30,7 @@
   become: true
   become_method: sudo
   yum: pkg={{ item }} state=latest
-  with_items: php.packages
+  with_items: "{{ php.packages }}"
   when: php.packages is defined
 
 - name: Start php-fpm
